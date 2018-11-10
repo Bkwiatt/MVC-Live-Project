@@ -1,0 +1,48 @@
+<div class="collapse navbar-collapse" id="main-navigation">
+                    <!-- Main Menu -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        
+                        <li>@Html.ActionLink("Blog", "Index", "Blog")</li>
+
+
+                        <!-- new Job Placement List-->
+                        <li id="JPDropDown">
+                            <a href="#">Job Placement</a>
+                            <ul class="sub-menu">
+                                <li class="job-placement-dropdown-item">Student Dashboard</li>
+                                <li class="JPDropDown">@Html.ActionLink("Home", "Analytics", "Analytics")</li>
+                                <li class="JPDropDown">@Html.ActionLink("Create an Account", "Create", "JPStudents")</li>
+                                <li class="JPDropDown">
+                                    <a href="#">Log Data</a>
+                                    <ul class="sub-menu">
+                                        <li class="JPDropDownSub">@Html.ActionLink("Applications", "Create", "JPApplications")</li>
+                                        <li class="JPDropDownSub">@Html.ActionLink("Offer", "Create", "JPHires")</li>
+                                    </ul>
+                                </li>
+                                <li class="JPDropDown">@Html.ActionLink("Networking", "Networking", "Networking")</li>
+                                <li class="JPDropDown">@Html.ActionLink("Bulletin", "Index", "JPBulletins")</li>
+                                <li class="JPDropDown">@Html.ActionLink("My Applications", "StudentIndex", "JPApplications")</li>
+
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    var notes = Startup.getNotifications();     
+                                    <li class="job-placement-dropdown-item">Job Placement Dashboard</li>
+                                    <li class="JPDropDown">@Html.ActionLink("Students", "Index", "JPStudentRundown")</li>
+                                    <li class="JPDropDown">@Html.ActionLink("Applications", "Index", "JPApplications")</li>
+                                    <li class="JPDropDown">@Html.ActionLink("Hires", "Index", "JPHires")</li>
+                                    <li class="JPDropDown">@Html.ActionLink("Bulletin", "Create", "JPBulletins")</li>
+                                    <li class="JPDropDown">@Html.ActionLink("Snapshot", "Snapshot", "SnapshotViewModel")</li>
+                                    <li class="JPDropDown">@Html.ActionLink("Updates (" +notes +")", "Update", "JPNotifications")</li>
+                                    
+                                }
+
+                            </ul>
+                        </li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        @Html.Partial("_LoginPartial")
+
+                </div>
+               
+            </div>
+        </nav>

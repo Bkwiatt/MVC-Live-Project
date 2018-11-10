@@ -1,0 +1,28 @@
+.JPDropDown {
+    background-color: rgba(26, 43, 81,1);
+}
+
+.JPDropDownSub {
+    background-color: rgba(26, 43, 81,1);
+}
+
+@media only screen and (max-width: 768px) {
+    .JPDropDown {
+        background-color: rgb(38, 78, 168); 
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .JPDropDownSub {
+        background-color: rgb(121, 161, 252);
+    }
+}
+
+.JPDropDown a:hover{
+    font-size: .9em;
+}
+
+#JPDropDown a:active, #JPDropDown a:focus {
+    font-size: .9em;
+    font-family: 'Libre Baskerville', serif;
+}
